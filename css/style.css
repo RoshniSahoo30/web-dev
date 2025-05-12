@@ -1,8 +1,9 @@
 body{
-    background-color: black;
+    background-color: white;
 }
 h1{
-    color: beige;
+    color: black;
+    font-style: italic;
 }
 #p1{
     color: blue;
