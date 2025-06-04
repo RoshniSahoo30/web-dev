@@ -1,0 +1,32 @@
+body{
+    background-color: white;
+    margin: 20px;
+}
+h1{
+    color: rgb(46, 39, 48);
+    font-style: italic;
+}
+#p1{
+    color:rgb(71, 71, 244);
+    font-size: 2em;
+    border: 3px solid;
+    
+}
+#p2{
+    color:blueviolet;
+    font-size: 2em;
+    border: 3px solid;
+}
+a:link{
+    color:blue;
+}
+a:visited{
+    color:rgb(26, 17, 35);
+}
+a:hover{
+    color:aqua;
+    font-size: large;
+}
+a:active{
+    color:rgb(197, 27, 27);
+}
