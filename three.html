@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: black;color:white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addlang(lang){
+        const li=document.createElement('li')
+        li.innerHTML=`${lang}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlang("python")
+    function add(lang){
+        const li=document.createElement('li')
+       // const txt=document.createTextNode(lang)
+        //li.appendChild(txt)
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.language').appendChild(li)
+    }
+    add('golang')
+
+    //edit
+    const two=document.querySelector("li:nth-child(2)")
+   // two.innerHTML="C++"
+   const newl=document.createElement('li')
+   newl.textContent="C"
+   two.replaceWith(newl)
+
+   //edit2
+   const one=document.querySelector("li:first-child")
+   one.outerHTML='<li>TypeScript</li>'
+
+   //remove 
+   const rmv=document.querySelector('li:last-child')
+   rmv.remvoe()
+</script>
+</html>
