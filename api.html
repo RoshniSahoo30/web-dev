@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: antiquewhite;">
+    <h1>GitHub Profile Info</h1>
+    <div id="profile"></div>
+    
+</body>
+<script>
+    const url='https://api.github.com/users/RoshniSahoo30'
+    const xhr=new XMLHttpRequest();
+    xhr.open('GET',url)
+    xhr.onreadystatechange = function(){
+    console.log(xhr.readyState);
+    if (xhr.readyState===4) {
+        const data=JSON.parse(this.responseText)
+        console.log(data);
+        const show = document.getElementById('profile');
+        show.innerHTML=`<h4>Username: ${data.login}</h4>`
+        show.innerHTML+=`<img src="${data.avatar_url}">`
+    }
+}
+    xhr.send()
+</script>
+</html>
