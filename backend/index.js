@@ -26,10 +26,6 @@ app.use(checkForAuth);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); 
 
-app.use('/', staticRouter);
-app.use('/user', userRouter);
- app.use('/msg', messageRouter);
-
 app.use(async (req, res, next) => {
     res.locals.user = req.user || null;
     res.locals.error = req.app.get('flash_error');
@@ -52,6 +48,10 @@ if (req.user && req.path === '/') {
 }
 next();
 });
+
+app.use('/', staticRouter);
+app.use('/user', userRouter);
+ app.use('/msg', messageRouter);
 
 
 app.listen(PORT, () => {

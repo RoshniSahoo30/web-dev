@@ -2,17 +2,17 @@
 const jwt = require("jsonwebtoken");
 const secret = "Nh@30*";
 
-function setUser( user) {
-    if(!user || !user._id || !user.email || !user.role) {
-        throw new Error("Invalid user object");
+function setUser(user) {
+    if (!user || !user._id || !user.email) {
+      throw new Error("Invalid user object");
     }
+  
     return jwt.sign({
-        id: user._id,
-        email: user.email,
-        role: user.role
+      id: user._id,
+      email: user.email
     }, secret);
-}
-
+  }
+  
 function getUser(token) {
     if(!token) 
         return null;
